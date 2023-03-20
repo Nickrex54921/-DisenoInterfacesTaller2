@@ -137,6 +137,11 @@ footer a:hover {
   color: #e6b800;
 }
 
+#identified {
+  text-align: center;
+  color: #e6b800;
+}
+
 /* Animaciones */
 @keyframes slideIn {
   from {
