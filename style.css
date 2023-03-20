@@ -1,113 +1,110 @@
-/* Reset */
+/* Reset de estilos para asegurar consistencia en navegadores */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
-
-/* Colors */
-:root {
-  --primary-color: #F2C94C;
-  --secondary-color: #1F2833;
-  --tertiary-color: #C5C6C7;
-}
-
-/* Global Styles */
+/* Fondo oscuro */
 body {
-  font-family: 'Lato', sans-serif;
-  color: var(--secondary-color);
-  background-color: beige;
+  background-color: #1c1c1c;
+  color: #dcdcdc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
+/* Contenedor principal */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 50px 20px;
 }
 
-/* Header */
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
+/* Imagen de perfil */
 .profile-pic {
-  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
   width: 200px;
   height: 200px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 5px solid var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-  color: black;
+/* Encabezado */
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Nombre y profesión */
+.header h1 {
+  margin-top: 20px;
   font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 5px;
 }
 
-h2 {
-  color: black  ;
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 5px;
+.header h2 {
+  font-size: 24px;
+  font-weight: normal;
 }
 
-h3 {
-  color: black;
-  font-size: 30px;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-/* Content */
-.content {
-  margin-bottom: 20px;
-}
-
-p {
+.header h3 {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: normal;
+}
+
+/* Secciones */
+.content {
+  margin-top: 50px;
+}
+
+.content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Línea animada para secciones */
+.content h2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  height: 2px;
+  width: 120%;
+  background-color: #e6b800;
+  transform: translateY(-50%);
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Descripción */
+.content p {
+  font-size: 18px;
   line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Educación y experiencia laboral */
+.content h4 {
+  font-size: 20px;
   margin-bottom: 10px;
-}
-
-ul li {
-  font-size: 16px;
-  font-weight: 400;
-  list-style-type: none;
-  margin-bottom: 5px;
-}
-
-ul li a {
-  color: var(--tertiary-color);
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease;
-}
-
-ul li a:hover {
-  color: var(--primary-color);
 }
 
 /* Contacto */
 .contacto {
+  margin-top: 50px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .contacto h2 {
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .contacto ul {
+  list-style: none;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .contacto li {
@@ -115,38 +112,37 @@ ul li a:hover {
 }
 
 .contacto li a {
-  color: var(--secondary-color);
+  color: #e6b800;
   font-size: 24px;
-  transition: color 0.3s ease;
 }
 
 .contacto li a:hover {
-  color: var(--primary-color);
+  color: #ffd700;
 }
 
-/* Animations */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Footer */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #a9a9a9;
 }
 
-.fade-in {
-  animation: fade-in 0.6s ease-out;
+footer a {
+  color: #a9a9a9;
+  text-decoration: none;
 }
 
-@keyframes slide-up {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+footer a:hover {
+  color: #e6b800;
 }
 
-.slide-up {
-  animation: slide-up 0.6s ease-out;
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 120%;
+  }
 }
