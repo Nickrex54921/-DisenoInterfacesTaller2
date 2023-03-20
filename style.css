@@ -1,80 +1,152 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+/* Colors */
+:root {
+  --primary-color: #F2C94C;
+  --secondary-color: #1F2833;
+  --tertiary-color: #C5C6C7;
+}
+
+/* Global Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
+  color: var(--secondary-color);
+  background-color: beige;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 5px solid var(--primary-color);
+}
+
+h1 {
+  color: black;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: black  ;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+h3 {
+  color: black;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* Content */
+.content {
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+ul li {
+  font-size: 16px;
+  font-weight: 400;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+ul li a {
+  color: var(--tertiary-color);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Contacto */
+.contacto {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contacto h2 {
+  margin-bottom: 10px;
+}
+
+.contacto ul {
+  display: flex;
+  justify-content: center;
+}
+
+.contacto li {
+  margin: 0 10px;
+}
+
+.contacto li a {
+  color: var(--secondary-color);
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.contacto li a:hover {
+  color: var(--primary-color);
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    box-sizing: border-box;
+  100% {
+    opacity: 1;
   }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 50px;
+}
+
+.fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
   }
-  
-  .profile-pic {
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+  100% {
+    transform: translateY(0);
   }
-  
-  h1 {
-    margin-top: 20px;
-    margin-bottom: 5px;
-  }
-  
-  h3 {
-    margin-top: 0;
-    margin-bottom: 30px;
-    color: #999;
-  }
-  
-  .content {
-    margin-bottom: 50px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    margin: 0;
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-  
-  .contacto {
-    text-align: center;
-  }
-  
-  ul {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  li {
-    margin: 0 10px;
-  }
-  
-  a {
-    color: #555;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px;
-    position: relative;
-  }
-  
-  a:hover {
-    color: #fff;
-  
+}
+
+.slide-up {
+  animation: slide-up 0.6s ease-out;
+}
